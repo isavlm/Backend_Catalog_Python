@@ -25,8 +25,8 @@ from ..dtos import (
     CreateProductRequestDto,
     CreateProductResponseDto,
     FindProductByIdResponseDto,
-    updateProductResponseDto,
-    updateProductRequestDto,
+    UpdateProductResponseDto,
+    UpdateProductRequestDto,
     FilterProductByStatusResponseDto,
     FilterProductsByStatusRequestDto
 
