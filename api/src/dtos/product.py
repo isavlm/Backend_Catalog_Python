@@ -28,3 +28,20 @@ class CreateProductRequestDto(ProductBase):
 
 class CreateProductResponseDto(ProductBase):
     ...
+
+
+class DeleteProductResponse(BaseModel):
+    ...
+
+
+class UpdateProductResponseDto(ProductBase):
+    ...
+
+class UpdateProductRequestDto(ProductBase):
+    ...
+
+class FilterProductsByStatusRequestDto(BaseModel):
+    status: str
+
+class FilterProductByStatusResponseDto(BaseModel):
+    products: List[ProductBase]

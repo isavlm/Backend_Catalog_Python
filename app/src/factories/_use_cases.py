@@ -1,5 +1,4 @@
-from ..use_cases import GetProductsCase
+from ..use_cases import ListProducts
 
-
-def get_products_case() -> GetProductsCase:
-    return GetProductsCase()
+def list_product_use_case() -> ListProducts:
+    return ListProducts()
