@@ -30,7 +30,7 @@ def delete_product_use_case() -> DeleteProduct:
     return DeleteProduct(get_product_repository())
 
 
-def Update_product_use_case() -> UpdateProduct:
+def update_product_use_case() -> UpdateProduct:
     return UpdateProduct(get_product_repository())
 
 

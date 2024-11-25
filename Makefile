@@ -58,8 +58,13 @@ start:  ## Starts the debug of the program
 win_start:  ## Starts the debug of the program in windows environment
 	.venv\Scripts\activate.bat && \
 	.env && \
-	uvicorn main:app --reload
+	uvicorn main:app --reload \
+	2>&1 | grep -v "site-packages"
 
 .PHONY: lint
 lint: ## Starts linter tool
-	flake8 .
+	flake8 . 
+
+
+start:
+    bash -c ". .venv/bin/activate && . .env && uvicorn main:app --reload --log-level error"	

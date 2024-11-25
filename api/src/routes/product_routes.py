@@ -28,7 +28,7 @@ from ..dtos import (
     UpdateProductResponseDto,
     UpdateProductRequestDto,
     FilterProductByStatusResponseDto,
-    FilterProductsByStatusRequestDto
+    FilterProductsByStatusRequestDto,
 
 )
 from factories.use_cases import (
@@ -36,7 +36,7 @@ from factories.use_cases import (
     find_product_by_id_use_case,
     create_product_use_case,
     delete_product_use_case,
-    Update_product_use_case,
+    update_product_use_case,
     filter_product_use_case,
 )
 
