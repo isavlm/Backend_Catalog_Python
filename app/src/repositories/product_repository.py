@@ -18,7 +18,7 @@ class ProductRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def edit(self, product: Product) -> Product:
+    def update(self, product: Product) -> Product:
         raise NotImplementedError
 
     @abstractmethod

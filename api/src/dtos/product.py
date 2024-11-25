@@ -1,6 +1,6 @@
 from typing import List
 from decimal import Decimal
-from pydantic import BaseModel
+from pydantic import BaseModel  # Can't figure out why can't import this.
 
 
 class ProductBase(BaseModel):
