@@ -28,7 +28,7 @@ from ..dtos import (
     UpdateProductResponseDto,
     UpdateProductRequestDto,
     FilterProductByStatusResponseDto,
-    FilterProductsByStatusRequestDto
+    FilterProductsByStatusRequestDto,
 
 )
 from factories.use_cases import (
@@ -36,7 +36,7 @@ from factories.use_cases import (
     find_product_by_id_use_case,
     create_product_use_case,
     delete_product_use_case,
-    Update_product_use_case,
+    update_product_use_case,
     filter_product_use_case,
 )
 
@@ -139,18 +139,18 @@ async def delete_product(
 
 #Route to Update
 
-@product_router.put("/{product_id}", response_model=updateProductResponseDto)
+@product_router.put("/{product_id}", response_model=UpdateProductResponseDto)
 async def update_product(
     product_id: str, 
-    request: updateProductRequestDto,
-    use_case: updateProduct = Depends(update_product_use_case),    
-) -> updateProductResponseDto | str:
+    request: UpdateProductRequestDto,
+    use_case: UpdateProduct = Depends(update_product_use_case),    
+) -> UpdateProductResponseDto | str:
     # Validate product status
     if request.status not in ["New", "Used", "For parts"]:
         raise HTTPException(status_code=400, detail="Not a valid status value (New, Used, For parts)")
     
     # Convert the DTO to the request model expected by the use case
-    update_request = updateProductRequest(
+    update_request = UpdateProductRequest(
         product_id=request.product_id,
         user_id=request.user_id,
         name=request.name,
@@ -166,7 +166,7 @@ async def update_product(
     
     if response:
         # Convert the response to updateProductResponseDto
-        return updateProductResponseDto(
+        return UpdateProductResponseDto(
             product_id=response.product_id,
             user_id=response.user_id,
             name=response.name,

@@ -1,6 +1,6 @@
 from typing import List
 from decimal import Decimal
-from pydantic import BaseModel
+from pydantic import BaseModel  # Can't figure out why can't import this.
 
 
 class ProductBase(BaseModel):
@@ -28,3 +28,20 @@ class CreateProductRequestDto(ProductBase):
 
 class CreateProductResponseDto(ProductBase):
     ...
+
+
+class DeleteProductResponse(BaseModel):
+    ...
+
+
+class UpdateProductResponseDto(ProductBase):
+    ...
+
+class UpdateProductRequestDto(ProductBase):
+    ...
+
+class FilterProductsByStatusRequestDto(BaseModel):
+    status: str
+
+class FilterProductByStatusResponseDto(BaseModel):
+    products: List[ProductBase]
