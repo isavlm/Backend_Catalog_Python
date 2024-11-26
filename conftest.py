@@ -5,7 +5,7 @@ from decimal import Decimal
 from app.src.core.models._product import Product, ProductStatuses
 
 from app.tests.fixtures.product_repository import mock_product_repository
-from adapters.src.repositories.sql.test.fixtures import session, product_repository
+from adapters.src.repositories.sql.fixtures import session, product_repository
 from api.tests.fixtures import mock_session_manager, client, app
 
 fake = Faker()
