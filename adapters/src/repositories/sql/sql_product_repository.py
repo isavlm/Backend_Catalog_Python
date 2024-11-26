@@ -6,7 +6,6 @@ from .tables import ProductSchema
 from sqlalchemy.inspection import inspect
 
 
-
 class SQLProductRepository(ProductRepository):
     def __init__(self, session: Session) -> None:
         self.session = session
@@ -79,7 +78,7 @@ class SQLProductRepository(ProductRepository):
             self.session.rollback()
             raise ProductRepositoryException(method="find")
 
-#Isadora's Code starts here
+# Isadora's Code starts here
 
 
     def update(self, product: Product) -> Product:
