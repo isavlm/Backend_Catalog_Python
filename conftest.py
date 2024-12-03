@@ -8,9 +8,15 @@ from app.tests.fixtures.product_repository import mock_product_repository
 from adapters.src.repositories.sql.fixtures import session, product_repository
 from api.tests.fixtures import mock_session_manager, client, app
 
+from main import app #IVLM added this line
+
 fake = Faker()
 
-
+#IVLM added this fixture on lines 15 to 19
+@pytest.fixture 
+def api_client():
+    return TestClient(app)
+#end of new code. 
 @pytest.fixture
 def fake_product_list():
     return [Product(

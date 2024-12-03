@@ -1,0 +1,254 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.7, pytest-7.4.4, pluggy-1.5.0
+rootdir: /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python
+plugins: anyio-4.4.0, Faker-33.0.0, mock-3.14.0
+collected 14 items
+
+adapters/src/repositories/sql/test/sql_product_repository_test.py ..F.   [ 28%]
+api/tests/api/health_check_api_test.py E                                 [ 35%]
+api/tests/api/product_routes_test.py EEEEE                               [ 71%]
+app/tests/unit/products/use_cases/filter_products_unit_test.py FFFF      [100%]
+
+==================================== ERRORS ====================================
+___ ERROR at setup of test__returns_ok_status__when_api_is_working_correctly ___
+
+    @pytest.fixture
+    def api_client():
+>       return TestClient(app)
+E       NameError: name 'TestClient' is not defined
+
+conftest.py:18: NameError
+_____________ ERROR at setup of test_get_products_endpoint_success _____________
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/api/product_routes_test.py, line 11
+  def test_get_products_endpoint_success(app, client, mock_session_manager):
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py, line 12
+  @pytest.fixture(scope="module")
+  def client(app):
+E       fixture 'app' not found
+>       available fixtures: _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, api_client, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, class_mocker, client, doctest_namespace, fake_database_product_list, fake_product, fake_product_list, faker, mock_product_repository, mock_session_manager, mocker, module_mocker, monkeypatch, package_mocker, product_repository, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, session, session_mocker, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py:12
+___________ ERROR at setup of test_filter_products_endpoint_success ____________
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/api/product_routes_test.py, line 46
+  def test_filter_products_endpoint_success(app, client, mock_session_manager):
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py, line 12
+  @pytest.fixture(scope="module")
+  def client(app):
+E       fixture 'app' not found
+>       available fixtures: _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, api_client, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, class_mocker, client, doctest_namespace, fake_database_product_list, fake_product, fake_product_list, faker, mock_product_repository, mock_session_manager, mocker, module_mocker, monkeypatch, package_mocker, product_repository, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, session, session_mocker, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py:12
+____________ ERROR at setup of test_filter_products_endpoint_empty _____________
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/api/product_routes_test.py, line 82
+  def test_filter_products_endpoint_empty(app, client, mock_session_manager):
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py, line 12
+  @pytest.fixture(scope="module")
+  def client(app):
+E       fixture 'app' not found
+>       available fixtures: _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, api_client, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, class_mocker, client, doctest_namespace, fake_database_product_list, fake_product, fake_product_list, faker, mock_product_repository, mock_session_manager, mocker, module_mocker, monkeypatch, package_mocker, product_repository, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, session, session_mocker, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py:12
+_______________ ERROR at setup of test_update_products_endpoint ________________
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/api/product_routes_test.py, line 111
+  def test_update_products_endpoint(app, client, mock_session_manager):
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py, line 12
+  @pytest.fixture(scope="module")
+  def client(app):
+E       fixture 'app' not found
+>       available fixtures: _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, api_client, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, class_mocker, client, doctest_namespace, fake_database_product_list, fake_product, fake_product_list, faker, mock_product_repository, mock_session_manager, mocker, module_mocker, monkeypatch, package_mocker, product_repository, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, session, session_mocker, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py:12
+____________ ERROR at setup of test_delete_product_endpoint_success ____________
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/api/product_routes_test.py, line 159
+  def test_delete_product_endpoint_success(app, client, mock_session_manager):
+file /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py, line 12
+  @pytest.fixture(scope="module")
+  def client(app):
+E       fixture 'app' not found
+>       available fixtures: _session_faker, anyio_backend, anyio_backend_name, anyio_backend_options, api_client, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, class_mocker, client, doctest_namespace, fake_database_product_list, fake_product, fake_product_list, faker, mock_product_repository, mock_session_manager, mocker, module_mocker, monkeypatch, package_mocker, product_repository, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, session, session_mocker, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/api/tests/fixtures.py:12
+=================================== FAILURES ===================================
+_________________________________ test_update __________________________________
+
+product_repository = <adapters.src.repositories.sql.sql_product_repository.SQLProductRepository object at 0x10662f2c0>
+session = <sqlalchemy.orm.session.Session object at 0x1065cbef0>
+fake_database_product_list = [<adapters.src.repositories.sql.tables.product.ProductSchema object at 0x106674b00>, <adapters.src.repositories.sql.tables.product.ProductSchema object at 0x106674f20>]
+
+    def test_update(product_repository, session, fake_database_product_list):
+        [productA, productB] = fake_database_product_list
+        updated_product = deepcopy(productA)
+        session.add(productA)
+        session.add(productB)
+        session.commit()
+    
+        updated_product.description = "Updated Description"
+>       product = product_repository.update(
+            updated_product.product_id, updated_product)
+E       TypeError: SQLProductRepository.update() takes 2 positional arguments but 3 were given
+
+adapters/src/repositories/sql/test/sql_product_repository_test.py:41: TypeError
+_________________________ test_filter_products_success _________________________
+
+mock_product_repository = <MagicMock id='4402413152'>
+fake_product_list = [Product(product_id='d76ace2c-ce4e-45ee-940e-71cf9ed09d32', user_id='f403d200-d201-4d92-8d1f-2c327f4427f0', name='part...tion='452 Rogers Meadows\nPort Michele, NC 78462', status=<ProductStatuses.FOR_PARTS: 'For parts'>, is_available=True)]
+
+    def test_filter_products_success(mock_product_repository, fake_product_list):
+        filter_by = "New"
+        expected_filtered_products = fake_product_list
+        mock_product_repository.filter.return_value = expected_filtered_products
+    
+        filter_product = FilterProductByStatus(product_repository=mock_product_repository)
+    
+>       response = filter_product(filter_by)
+
+app/tests/unit/products/use_cases/filter_products_unit_test.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <app.src.use_cases.product.filter.use_case.FilterProductByStatus object at 0x1066e1580>
+request = 'New'
+
+    def __call__(
+        self, request: FilterProductsByStatusRequest
+    ) -> FilterProductsByStatusResponse:
+        try:
+            existing_products = self.product_repository.filter(
+>               request.status
+            )
+E           AttributeError: 'str' object has no attribute 'status'
+
+app/src/use_cases/product/filter/use_case.py:21: AttributeError
+__________________ test_filter_products_repository_exception ___________________
+
+mocker = <pytest_mock.plugin.MockerFixture object at 0x1066e1c10>
+mock_product_repository = <MagicMock id='4402846928'>
+
+    def test_filter_products_repository_exception(mocker, mock_product_repository):
+        filter_by = "old"
+        mock_product_repository.filter.side_effect = ProductRepositoryException(
+            "filtering")
+    
+        filter_product = FilterProductByStatus(product_repository=mock_product_repository)
+    
+        with pytest.raises(ProductRepositoryException) as exc_info:
+>           filter_product(filter_by)
+
+app/tests/unit/products/use_cases/filter_products_unit_test.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <app.src.use_cases.product.filter.use_case.FilterProductByStatus object at 0x1066e3bc0>
+request = 'old'
+
+    def __call__(
+        self, request: FilterProductsByStatusRequest
+    ) -> FilterProductsByStatusResponse:
+        try:
+            existing_products = self.product_repository.filter(
+>               request.status
+            )
+E           AttributeError: 'str' object has no attribute 'status'
+
+app/src/use_cases/product/filter/use_case.py:21: AttributeError
+_________________________ test_update_products_success _________________________
+
+mock_product_repository = <MagicMock id='4402938704'>
+fake_product = Product(product_id='22403d28-db59-40ac-9bc9-67da00793762', user_id='b5cea437-cc9d-496f-b26e-51914e65f875', name='let',...'298 Johnson Inlet Suite 423\nSouth Dorisborough, ID 36466', status=<ProductStatuses.USED: 'Used'>, is_available=False)
+
+    def test_update_products_success(mock_product_repository, fake_product):
+        expected_product = fake_product
+        mock_product_repository.update.return_value = expected_product
+    
+        update_product = UpdateProduct(product_repository=mock_product_repository)
+    
+        response = update_product(expected_product.product_id, expected_product)
+    
+>       assert mock_product_repository.filter.called_once_with(expected_product)
+
+app/tests/unit/products/use_cases/filter_products_unit_test.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='mock.filter' id='4402981888'>, name = 'called_once_with'
+
+    def __getattr__(self, name):
+        if name in {'_mock_methods', '_mock_unsafe'}:
+            raise AttributeError(name)
+        elif self._mock_methods is not None:
+            if name not in self._mock_methods or name in _all_magics:
+                raise AttributeError("Mock object has no attribute %r" % name)
+        elif _is_magic(name):
+            raise AttributeError(name)
+        if not self._mock_unsafe and (not self._mock_methods or name not in self._mock_methods):
+            if name.startswith(('assert', 'assret', 'asert', 'aseert', 'assrt')) or name in _ATTRIB_DENY_LIST:
+>               raise AttributeError(
+                    f"{name!r} is not a valid assertion. Use a spec "
+                    f"for the mock if {name!r} is meant to be an attribute.")
+E               AttributeError: 'called_once_with' is not a valid assertion. Use a spec for the mock if 'called_once_with' is meant to be an attribute.. Did you mean: 'assert_called_once_with'?
+
+/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py:665: AttributeError
+----------------------------- Captured stdout call -----------------------------
+Product Updated Successfully:
+<MagicMock name='mock.get_by_id()' id='4402950512'>
+_________________________ test_delete_product_success __________________________
+
+mock_product_repository = <MagicMock id='4403025664'>
+fake_product = Product(product_id='022e785f-9c1a-4e76-b9c7-291e4367a1bc', user_id='c8c29fe2-00d5-4f97-bf03-157a7334fa60', name='must'...tion='7889 Bolton Corner Suite 343\nNew Lindahaven, CO 60028', status=<ProductStatuses.NEW: 'New'>, is_available=False)
+
+    def test_delete_product_success(mock_product_repository, fake_product):
+        expected_response = fake_product.product_id
+        mock_product_repository.delete.return_value = expected_response
+    
+        delete_product = DeleteProduct(product_repository=mock_product_repository)
+        request = DeleteProductRequest(product_id=expected_response)
+        response = delete_product(request)
+    
+>       assert mock_product_repository.delete.called_once_with(expected_response)
+
+app/tests/unit/products/use_cases/filter_products_unit_test.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='mock.delete' id='4403025136'>, name = 'called_once_with'
+
+    def __getattr__(self, name):
+        if name in {'_mock_methods', '_mock_unsafe'}:
+            raise AttributeError(name)
+        elif self._mock_methods is not None:
+            if name not in self._mock_methods or name in _all_magics:
+                raise AttributeError("Mock object has no attribute %r" % name)
+        elif _is_magic(name):
+            raise AttributeError(name)
+        if not self._mock_unsafe and (not self._mock_methods or name not in self._mock_methods):
+            if name.startswith(('assert', 'assret', 'asert', 'aseert', 'assrt')) or name in _ATTRIB_DENY_LIST:
+>               raise AttributeError(
+                    f"{name!r} is not a valid assertion. Use a spec "
+                    f"for the mock if {name!r} is meant to be an attribute.")
+E               AttributeError: 'called_once_with' is not a valid assertion. Use a spec for the mock if 'called_once_with' is meant to be an attribute.. Did you mean: 'assert_called_once_with'?
+
+/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py:665: AttributeError
+=============================== warnings summary ===============================
+env/lib/python3.12/site-packages/fastapi/openapi/models.py:55
+  /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/env/lib/python3.12/site-packages/fastapi/openapi/models.py:55: DeprecationWarning: `general_plain_validator_function` is deprecated, use `with_info_plain_validator_function` instead.
+    return general_plain_validator_function(cls._validate)
+
+env/lib/python3.12/site-packages/pydantic_core/core_schema.py:4034
+  /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/env/lib/python3.12/site-packages/pydantic_core/core_schema.py:4034: DeprecationWarning: `general_plain_validator_function` is deprecated, use `with_info_plain_validator_function` instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED adapters/src/repositories/sql/test/sql_product_repository_test.py::test_update
+FAILED app/tests/unit/products/use_cases/filter_products_unit_test.py::test_filter_products_success
+FAILED app/tests/unit/products/use_cases/filter_products_unit_test.py::test_filter_products_repository_exception
+FAILED app/tests/unit/products/use_cases/filter_products_unit_test.py::test_update_products_success
+FAILED app/tests/unit/products/use_cases/filter_products_unit_test.py::test_delete_product_success
+ERROR api/tests/api/health_check_api_test.py::test__returns_ok_status__when_api_is_working_correctly
+ERROR api/tests/api/product_routes_test.py::test_get_products_endpoint_success
+ERROR api/tests/api/product_routes_test.py::test_filter_products_endpoint_success
+ERROR api/tests/api/product_routes_test.py::test_filter_products_endpoint_empty
+ERROR api/tests/api/product_routes_test.py::test_update_products_endpoint
+ERROR api/tests/api/product_routes_test.py::test_delete_product_endpoint_success
+============== 5 failed, 3 passed, 2 warnings, 6 errors in 0.21s ===============

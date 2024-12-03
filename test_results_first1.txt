@@ -1,0 +1,69 @@
+ck_methods):
+            if name.startswith(('assert', 'assret', 'asert', 'aseert', 'assrt')) or name in _ATTRIB_DENY_LIST:
+>               raise AttributeError(
+                    f"{name!r} is not a valid assertion. Use a spec "
+                    f"for the mock if {name!r} is meant to be an attribute.")
+E               AttributeError: 'called_once_with' is not a valid assertion. Use a spec for the mock if 'called_once_with' is meant to be an attribute.. Did you mean: 'assert_called_once_with'?
+
+/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py:665: AttributeError
+------------------------------------------------- Captured stdout call --------------------------------------------------
+Product Updated Successfully:
+<MagicMock name='mock.get_by_id()' id='4363628288'>
+______________________________________________ test_delete_product_success ______________________________________________
+
+mock_product_repository = <MagicMock id='4363341552'>
+fake_product = Product(product_id='635cd05b-0aff-4048-965c-25daf2ae99e0', user_id='fd38f19f-0cf9-436c-9b6c-27e3b0727d2c', name='nothi..., location='404 Hector Parkway\nNorth Michaelstad, CO 95396', status=<ProductStatuses.USED: 'Used'>, is_available=True)
+
+    def test_delete_product_success(mock_product_repository, fake_product):
+        expected_response = fake_product.product_id
+        mock_product_repository.delete.return_value = expected_response
+    
+        delete_product = DeleteProduct(product_repository=mock_product_repository)
+        request = DeleteProductRequest(product_id=expected_response)
+        response = delete_product(request)
+    
+>       assert mock_product_repository.delete.called_once_with(expected_response)
+
+app/tests/unit/products/use_cases/filter_products_unit_test.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='mock.delete' id='4363343040'>, name = 'called_once_with'
+
+    def __getattr__(self, name):
+        if name in {'_mock_methods', '_mock_unsafe'}:
+            raise AttributeError(name)
+        elif self._mock_methods is not None:
+            if name not in self._mock_methods or name in _all_magics:
+                raise AttributeError("Mock object has no attribute %r" % name)
+        elif _is_magic(name):
+            raise AttributeError(name)
+        if not self._mock_unsafe and (not self._mock_methods or name not in self._mock_methods):
+            if name.startswith(('assert', 'assret', 'asert', 'aseert', 'assrt')) or name in _ATTRIB_DENY_LIST:
+>               raise AttributeError(
+                    f"{name!r} is not a valid assertion. Use a spec "
+                    f"for the mock if {name!r} is meant to be an attribute.")
+E               AttributeError: 'called_once_with' is not a valid assertion. Use a spec for the mock if 'called_once_with' is meant to be an attribute.. Did you mean: 'assert_called_once_with'?
+
+/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/unittest/mock.py:665: AttributeError
+=================================================== warnings summary ====================================================
+env/lib/python3.12/site-packages/fastapi/openapi/models.py:55
+  /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/env/lib/python3.12/site-packages/fastapi/openapi/models.py:55: DeprecationWarning: `general_plain_validator_function` is deprecated, use `with_info_plain_validator_function` instead.
+    return general_plain_validator_function(cls._validate)
+
+env/lib/python3.12/site-packages/pydantic_core/core_schema.py:4034
+  /Users/isa/Desktop/Projects/Backend_Catalog_Python/Backend_Catalog_Python/env/lib/python3.12/site-packages/pydantic_core/core_schema.py:4034: DeprecationWarning: `general_plain_validator_function` is deprecated, use `with_info_plain_validator_function` instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================================ short test summary info ================================================
+FAILED adapters/src/repositories/sql/test/sql_product_repository_test.py::test_update - TypeError: SQLProductRepository.update() takes 2 positional arguments but 3 were given
+FAILED api/tests/api/product_routes_test.py::test_filter_products_endpoint_success - assert 404 == 200
+FAILED api/tests/api/product_routes_test.py::test_filter_products_endpoint_empty - assert 404 == 200
+FAILED api/tests/api/product_routes_test.py::test_delete_product_endpoint_success - fastapi.exceptions.ResponseValidationError: 1 validation errors:
+FAILED app/tests/unit/products/use_cases/filter_products_unit_test.py::test_filter_products_success - AttributeError: 'str' object has no attribute 'status'
+FAILED app/tests/unit/products/use_cases/filter_products_unit_test.py::test_filter_products_repository_exception - AttributeError: 'str' object has no attribute 'status'
+FAILED app/tests/unit/products/use_cases/filter_products_unit_test.py::test_update_products_success - AttributeError: 'called_once_with' is not a valid assertion. Use a spec for the mock if 'called_once_with' is meant ...
+FAILED app/tests/unit/products/use_cases/filter_products_unit_test.py::test_delete_product_success - AttributeError: 'called_once_with' is not a valid assertion. Use a spec for the mock if 'called_once_with' is meant ...
+ERROR api/tests/api/health_check_api_test.py::test__returns_ok_status__when_api_is_working_correctly
+=================================== 8 failed, 5 passed, 2 warnings, 1 error in 0.37s ====================================
+ 
